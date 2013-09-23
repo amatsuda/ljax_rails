@@ -1,5 +1,3 @@
-require "ljax_rails/version"
-
 module LjaxRails
-  # Your code goes here...
+  VERSION = Gem.loaded_specs['ljax_rails'].version.to_s
 end
