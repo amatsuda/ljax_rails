@@ -11,7 +11,7 @@
       render nothing: true
       yield
       self.response_body = nil
-      render partial: flash[request.headers['X-LJAX-Container']]
+      render partial: flash.delete(request.headers['X-LJAX-Container'])
     else
       yield
     end
