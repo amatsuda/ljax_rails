@@ -11,7 +11,9 @@
       render nothing: true
       yield
       self.response_body = nil
-      render partial: flash.delete(request.headers['X-LJAX-Container'])
+
+      partial = LjaxRails.encryptor.decrypt_and_verify request.headers['X-LJAX-Partial']
+      render partial: partial
     else
       yield
     end

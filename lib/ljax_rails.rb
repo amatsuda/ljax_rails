@@ -10,4 +10,15 @@ module LjaxRails
       end
     end
   end
+
+  def self.encryptor
+    @encryption_key ||= begin
+      key = if Rails.application.config.respond_to? :secret_key_base
+        Rails.application.config.secret_key_base || Rails.application.config.secret_token
+      else
+        Rails.application.config.secret_token
+      end
+      ActiveSupport::MessageEncryptor.new key
+    end
+  end
 end
