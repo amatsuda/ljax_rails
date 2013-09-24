@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ronnie@dio.jp"]
   spec.description   = '"LJAX" (= Lazy load Ajax) on Rails'
   spec.summary       = '"LJAX" (= Lazy load Ajax) on Rails'
-  spec.homepage      = ""
+  spec.homepage      = 'https://github.com/amatsuda/ljax_rails'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
