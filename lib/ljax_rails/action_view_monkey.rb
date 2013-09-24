@@ -10,7 +10,7 @@ module LjaxRails
         context.flash[id] = partial
         loading = block.call if block
 
-        context.render text: %Q!<div id="#{id}" class="ljax-container" url="#{url}">#{loading}</div>!.html_safe
+        %Q!<div id="#{id}" class="ljax-container" url="#{url}">#{loading}</div>!.html_safe
       else
         super
       end
