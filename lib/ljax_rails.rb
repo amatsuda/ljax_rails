@@ -6,7 +6,7 @@ module LjaxRails
       ActiveSupport.on_load :action_controller do
         require_relative 'ljax_rails/action_dispatch_monkey'
         require_relative 'ljax_rails/action_view_monkey'
-        require_relative 'ljax_rails/application_controller_ljax_filter'
+        require_relative 'ljax_rails/action_controller_monkey'
       end
     end
   end
