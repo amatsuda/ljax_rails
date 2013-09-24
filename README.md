@@ -1,29 +1,27 @@
-# LjaxRails
+# LJAX
 
-TODO: Write a gem description
+Lazy-load AJAX on Rails
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Bundle `ljax_rails` gem:
 
     gem 'ljax_rails'
 
-And then execute:
+Then add this to your app/assets/javascripts/application.js (or whatever bundle you use):
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ljax_rails
+    //=require ljax_rails
 
 ## Usage
 
-TODO: Write usage instructions here
+Add `remote: true` option to your `render :partial` call, then the partial will be lazily rendered in a separate HTTP request.
+
+    <%= render 'users', remote: true %>
+
+Also, you can give `remote_url` option for specifying request target URL.
+
+    <%= render 'sidebar', remote: true, remote_url: '/shared/sidebar' %>
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Send me your PRs!
