@@ -1,5 +1,9 @@
 ::ActionController::Base.class_eval do
-  around_action :handle_ljax
+  if Rails::VERSION::MAJOR >= 4
+    around_action :handle_ljax
+  else
+    around_filter :handle_ljax
+  end
 
   private
   def handle_ljax
