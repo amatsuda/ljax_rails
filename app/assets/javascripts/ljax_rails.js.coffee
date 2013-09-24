@@ -3,7 +3,7 @@ $ ->
     $.ajax
       type: 'GET'
       dataType: 'text'
-      url: $(container).prop('url')
+      url: $(container).data('remote-url')
       headers: {'X-LJAX': 'true', 'X-LJAX-Container': container.id}
       success: (data, status, xhr) ->
         $("##{container.id}").replaceWith data
