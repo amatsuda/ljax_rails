@@ -14,6 +14,8 @@ Then add this to your app/assets/javascripts/application.js (or whatever bundle 
 
 ## Usage
 
+### Views
+
 Add `remote: true` option to your `render :partial` call, then the partial will be lazily rendered in a separate HTTP request.
 
     <%= render 'users', remote: true %>
@@ -21,6 +23,16 @@ Add `remote: true` option to your `render :partial` call, then the partial will 
 Also, you can give `remote_url` option for specifying request target URL.
 
     <%= render 'sidebar', remote: true, remote_url: '/shared/sidebar' %>
+
+### Controllers
+
+`request.ljax?` tells you whether the request was sent via LJAX or not.
+
+    def index
+      if request.ljax?
+        @users = User.all
+      end
+    end
 
 ## Contributing
 
