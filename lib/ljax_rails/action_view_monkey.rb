@@ -6,7 +6,7 @@ module LjaxRails
       if options[:locals] && options[:locals].delete(:remote)
         partial = options.delete :partial
         url = options[:locals].delete :remote_url
-        id = SecureRandom.uuid
+        id = "ljax-#{SecureRandom.uuid}"
         context.flash[id] = partial
         loading = block.call if block
 
