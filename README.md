@@ -34,6 +34,15 @@ Also, you can give `remote_url` option for specifying request target URL.
       end
     end
 
+## TODO
+
+* JS error handling
+* JS event hook
+* spinner?
+* tests
+* documentation
+* tutorial
+
 ## Contributing
 
 Send me your PRs!
