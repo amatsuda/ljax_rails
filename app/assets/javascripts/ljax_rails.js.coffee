@@ -1,5 +1,5 @@
 $ ->
-  for container in $('.ljax-container')
+  $('.ljax-container').each (index, container) =>
     $.ajax
       type: 'GET'
       dataType: 'text'
