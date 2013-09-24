@@ -11,7 +11,7 @@ module LjaxRails
         id = "ljax-#{SecureRandom.uuid}"
         loading = block.call if block
 
-        %Q!<div id="#{id}" class="ljax-container" data-ljax-partial="#{encrypted_partial}"#{ data-remote-url="#{url}" if url}>#{loading}</div>!.html_safe
+        %Q!<div id="#{id}" class="ljax-container" data-ljax-partial="#{encrypted_partial}"#{%Q( data-remote-url="#{url}") if url}>#{loading}</div>!.html_safe
       else
         super
       end
