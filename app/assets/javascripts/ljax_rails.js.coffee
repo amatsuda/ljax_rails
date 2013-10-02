@@ -6,9 +6,9 @@ $ ->
       url: $(container).data('remote-url')
       cache: false
       headers: {'X-LJAX': 'true', 'X-LJAX-Container': container.id, 'X-LJAX-Partial': $(container).data('ljax-partial')}
-      success: (data, status, xhr) ->
+      success: (data) ->
         $(container).replaceWith(data).trigger('ljax:success')
-      error: (data, status, xhr) ->
+      error: ->
         $(container).trigger('ljax:error')
       complete: ->
         $(container).trigger('ljax:complete')
